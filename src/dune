@@ -1,0 +1,23 @@
+; main をエントリーポイントとして、dentaku.exe という実行ファイルを生成する dune ファイル
+
+(executable
+ (name main)
+ (libraries parser lexer eval)
+ (modules main))
+(ocamllex lexer)
+(ocamlyacc parser)
+(library
+  (name eval)
+  (libraries syntax)
+  (modules eval))
+(library
+  (name syntax)
+  (modules syntax))
+(library
+  (name lexer)
+  (libraries parser)
+  (modules lexer))
+(library
+  (name parser)
+  (libraries syntax)
+  (modules parser))

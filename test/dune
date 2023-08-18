@@ -1,0 +1,3 @@
+(test
+  (name syntax_test)
+  (libraries syntax eval))
